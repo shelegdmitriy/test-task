@@ -5,6 +5,7 @@ import store from 'redux/store';
 
 import App from 'components/App';
 import * as serviceWorker from './serviceWorker';
+import 'shared/styles.css';
 
 const rootElement = (
   <Provider store={store}>
