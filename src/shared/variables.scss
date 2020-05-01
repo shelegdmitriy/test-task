@@ -1,3 +1,56 @@
 
-
 $white: #fff;
+$purple-light: #f0f0f7;
+$side-menu-purple: #43425c;
+$side-menu-purple-dark: #3c3b52;
+$side-menu-purple-active: #a1a1f7;
+$grey: #797b84;
+$secondary-text: #bcbcca;
+$orange: #ffbf73;
+$blue: #2788fa;
+
+$side-menu-width: 250px;
+$header-height: 70px;
+
+@mixin d-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-items-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@mixin jc-space-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@mixin shadow($params...) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+@mixin transition($property, $time, $function) {
+  -webkit-transition: $property $time $function;
+  -moz-transition: $property $time $function;
+  -ms-transition: $property $time $function;
+  -o-transition: $property $time $function;
+  transition:  $property $time $function;
+}
+
+@mixin rad($radius, $important...) {
+  -webkit-border-radius: $radius $important;
+     -moz-border-radius: $radius $important;
+      -ms-border-radius: $radius $important;
+          border-radius: $radius $important;
+}

@@ -1,9 +1,11 @@
 
 const initialState = {
   siteLoading: false,
+  events: [],
 };
 
 const SITE_LOADING = 'SITE_LOADING';
+const ADD_EVENT = 'test-task/calendar/add-event';
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -12,38 +14,19 @@ export default (state = initialState, action) => {
         ...state,
         siteLoading: action.payload,
       };
+    case ADD_EVENT:
+      return {
+        ...state,
+        events: action.payload,
+      };
     default:
       return state;
   }
 }
 
-// export const baseHandleDecorator = (successConst, errorConst, func, loading = true) => {
-//   return (dispatch) => {
-//     dispatch({
-//       type: SITE_LOADING,
-//       payload: loading,
-//     })
-//     return func(dispatch)
-//       .then((response) => {
-//         dispatch({
-//           type: successConst,
-//           payload: response,
-//         });
-//         dispatch({
-//           type: SITE_LOADING,
-//           payload: false,
-//         });
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//         dispatch({
-//           type: errorConst,
-//           payload: error.response,
-//         });
-//         dispatch({
-//           type: SITE_LOADING,
-//           payload: false,
-//         });
-//       });
-//   };
-// };
+export const setCalendarEvent = event => (dispatch) => {
+  dispatch({
+    type: ADD_EVENT,
+    payload: event,
+  });
+}
